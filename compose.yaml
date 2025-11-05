@@ -1,0 +1,21 @@
+volumes:
+  sb_data:
+
+services:
+  postgres:
+    image: postgres
+    container_name: produit_postgres
+    restart: always
+    ports:
+      - '5456:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Ewen2025@
+      POSTGRES_DB: produit
+
+  adminer:
+      image: adminer
+      container_name: adminer_produit
+      restart: always
+      ports:
+        - '8082:8080'
